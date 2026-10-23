@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard</title>
+    <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen p-6 flex flex-col items-center justify-center">
+
+    <div class="w-full max-w-4xl space-y-6">
+        
+        <!-- Header: Waktu & Sapaan -->
+        <header class="card-box p-6 text-center space-y-2">
+            <div id="clock" class="text-4xl md:text-6xl font-bold tracking-wider font-serif">10:45:22</div>
+            <div id="date" class="text-sm md:text-base font-light tracking-wide text-beige">Tuesday, January 27, 2026</div>
+            <div class="flex items-center justify-center gap-2 pt-2">
+                <h1 id="greeting" class="text-2xl md:text-3xl font-serif">Good Morning</h1>
+                <button id="edit-name-btn" class="text-xs px-2.5 py-1 rounded transition border border-beige/30 hover:bg-beige hover:text-charcoal" title="Edit Nama">✏️ Edit</button>
+            </div>
+        </header>
+
+        <!-- Grid Utama -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Focus Timer -->
+            <section class="card-box p-6 flex flex-col items-center justify-between">
+                <h2 class="text-lg font-medium tracking-wide text-beige uppercase">Focus Timer</h2>
+                <div id="timer-display" class="text-5xl font-mono font-bold tracking-widest my-4">25:00</div>
+                
+                <div class="flex items-center gap-2 mb-4 text-sm">
+                    <label for="timer-input" class="text-beige/80">Atur Menit:</label>
+                    <input type="number" id="timer-input" min="1" max="60" value="25" class="w-16 px-2 py-1 rounded bg-charcoal border border-beige/30 text-center text-white focus:outline-none focus:border-beige">
+                    <button id="set-timer-btn" class="bg-maroon hover:bg-maroon/80 px-3 py-1 rounded text-white transition shadow">Set</button>
+                </div>
+
+                <div class="flex gap-3 w-full justify-center">
+                    <button id="start-btn" class="bg-sage hover:bg-sage/80 px-5 py-2 rounded font-medium transition text-charcoal shadow">Start</button>
+                    <button id="stop-btn" class="bg-amber-700 hover:bg-amber-600 px-5 py-2 rounded font-medium transition text-white shadow">Stop</button>
+                    <button id="reset-btn" class="bg-maroon hover:bg-maroon/80 px-5 py-2 rounded font-medium transition text-white shadow">Reset</button>
+                </div>
+            </section>
+
+            <!-- To-Do List -->
+            <section class="card-box p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-lg font-medium tracking-wide text-beige uppercase mb-4">Tasks</h2>
+                    <div class="flex gap-2 mb-4">
+                        <input type="text" id="task-input" placeholder="Tambah tugas baru..." class="flex-1 px-3 py-2 rounded bg-charcoal border border-beige/30 text-white placeholder-beige/40 focus:outline-none focus:border-beige text-sm">
+                        <button id="add-task-btn" class="bg-maroon hover:bg-maroon/80 px-4 py-2 rounded text-white font-medium transition text-sm">Add</button>
+                    </div>
+                </div>
+                <div class="overflow-y-auto max-h-48 space-y-2 pr-1" id="task-list-container">
+                    <!-- Daftar tugas akan masuk ke sini secara otomatis -->
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Quick Links -->
+        <section class="card-box p-6">
+            <h2 class="text-lg font-medium tracking-wide text-beige uppercase mb-4">Quick Links</h2>
+            <div class="flex flex-col md:flex-row gap-2 mb-4">
+                <input type="text" id="link-name-input" placeholder="Nama Link (cth: Google)" class="flex-1 px-3 py-2 rounded bg-charcoal border border-beige/30 text-white placeholder-beige/40 focus:outline-none focus:border-beige text-sm">
+                <input type="url" id="link-url-input" placeholder="URL (https://...)" class="flex-1 px-3 py-2 rounded bg-charcoal border border-beige/30 text-white placeholder-beige/40 focus:outline-none focus:border-beige text-sm">
+                <button id="add-link-btn" class="bg-maroon hover:bg-maroon/80 px-4 py-2 rounded text-white font-medium transition text-sm">Add Link</button>
+            </div>
+            <div id="quick-links-container" class="flex flex-wrap gap-3">
+                <!-- Daftar link cepat -->
+            </div>
+        </section>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

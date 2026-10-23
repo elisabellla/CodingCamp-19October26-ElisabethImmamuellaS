@@ -1,0 +1,45 @@
+/* Definisi Warna Tema (Urban, Warm, Moody) */
+:root {
+    --charcoal: #252525;
+    --maroon: #8B2635;
+    --beige: #D9B88F;
+    --sage: #657568;
+}
+
+/* Pengaturan Font Dasar */
+body {
+    background-color: var(--charcoal);
+    color: #F3F0EC;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Mengatur font Serif untuk elemen tertentu */
+h1, h2, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Kelas custom untuk kotak kartu agar kelihatannya rapi */
+.card-box {
+    background-color: #1f1f1f;
+    border: 1px solid rgba(217, 184, 143, 0.2); /* Sentuhan beige tipis */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Warna helper untuk Tailwind */
+.bg-maroon { background-color: var(--maroon); }
+.text-beige { color: var(--beige); }
+.bg-sage { background-color: var(--sage); }
+.bg-charcoal { background-color: var(--charcoal); }
+
+/* Scrollbar minimalis */
+#task-list-container::-webkit-scrollbar {
+    width: 5px;
+}
+#task-list-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+#task-list-container::-webkit-scrollbar-thumb {
+    background: var(--sage);
+    border-radius: 4px;
+}
